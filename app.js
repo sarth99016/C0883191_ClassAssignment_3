@@ -3,6 +3,7 @@ const express = require('express');
 
 const app = express();
 const SERVER_PORT = process.env.PORT || 3000;
+const NAME = process.env.NAME || "Sarthak"
 
 
 // Use body-parser middleware to parse incoming request bodies
@@ -18,4 +19,5 @@ app.get('/product', (req, res) => {
 
 app.listen(SERVER_PORT, () => {
     console.log(`Server listening on port ${SERVER_PORT}`);
+    console.log(`Name: ${NAME}`);
 });
