@@ -61,3 +61,17 @@ docker run --detach --publish 3001:8080 -e PORT=8080 -e NAME=C1 c0883191-node-as
 ```
 docker run --detach --publish 3000:3000 --env-file my-env.txt c0883191-node-assignment3:latest
 ```
+
+### Tag your recently created image to publish on DockerHub registry
+
+```
+docker image tag c0883191-node-assignment3:latest sarthak99106/c0883191-node-assignment3:1.0.0
+docker images
+docker login
+docker push sarthak99106/c0883191-node-assignment3:1.0.0
+```
+### Pull and run the recently pushed image on local docker environment
+```
+docker pull sarthak99106/c0883191-node-assignment3:1.0.0
+docker run -d -p 3000:3000 sarthak99106/c0883191-node-assignment3:1.0.0
+```
